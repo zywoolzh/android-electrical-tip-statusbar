@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_electrical"
-        android:label="电气知识状态栏"
+        android:label="电气知识卡片"
         android:roundIcon="@drawable/ic_electrical"
         android:supportsRtl="true"
         android:theme="@style/Theme.ElectricalTip">
@@ -23,22 +19,14 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".KnowledgeNotificationService"
-            android:exported="false"
-            android:foregroundServiceType="specialUse">
-            <property
-                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Keeps an explicitly enabled educational electrical-safety tip visible and periodically rotates it." />
-        </service>
-
         <receiver
-            android:name=".BootReceiver"
-            android:enabled="true"
-            android:exported="true">
+            android:name=".KnowledgeWidget"
+            android:label="电气知识大卡片"
+            android:exported="false">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/knowledge_widget" />
         </receiver>
     </application>
 </manifest>

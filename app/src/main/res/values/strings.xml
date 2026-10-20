@@ -1,0 +1,12 @@
+<resources>
+    <string name="widget_description">在桌面阅读完整的电气知识卡片，支持分页、收藏和自动轮换</string>
+    <string name="widget_preview_category">电气笔记 / UPS</string>
+    <string name="widget_preview_title">有电，不等于仍有完整保护</string>
+    <string name="widget_preview_body">在线双变换 UPS 正常工作时，交流输入经整流转换为直流，再由逆变器向负载供电。\n\n当负载转由旁路供电时，设备可能仍正常运行，但供电路径已经改变。\n\n点击标题查看全文。</string>
+    <string name="widget_previous_page">上页</string>
+    <string name="widget_next_page">下页</string>
+    <string name="widget_preview_page">1 / 2 · 点标题读全文</string>
+    <string name="widget_previous_tip">上一条</string>
+    <string name="widget_next_tip">下一条</string>
+    <string name="widget_favorite">☆ 收藏</string>
+</resources>
